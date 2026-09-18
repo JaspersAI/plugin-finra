@@ -1,9 +1,6 @@
 import { defineSource } from '@jaspers-ai/sdk'
 import { z } from 'zod'
 
-// The published SDK types a source's arguments as unknown, since from there it cannot see the
-// schema beside them. Each run names what its own input parses to.
-type Args = Record<string, any>
 
 // FINRA's public data API. No key: short interest as brokers report it, twice a month, and what
 // trades away from the exchanges.
@@ -32,8 +29,7 @@ export const shortInterest = defineSource({
     ticker: z.string().describe('A ticker, like AAPL.'),
     limit: z.number().int().min(1).max(1000).default(60).describe('Reports to read. They come twice a month, so 60 is about two and a half years.'),
   }),
-  async run(raw, ctx) {
-    const { ticker, limit } = raw as Args
+  async run({ ticker, limit }, ctx) {
     const symbol = ticker.trim().toUpperCase()
     // FINRA refuses to sort unless every partition key is given, and answers oldest first, so a
     // small limit reads 2020. Take the lot for this symbol and keep the newest here instead; it is
