@@ -1,7 +1,7 @@
 {
   "name": "finra",
-  "version": "1.0.0",
-  "description": "Short interest and days to cover, as reported to FINRA twice a month. No key.",
+  "version": "1.1.0",
+  "description": "FINRA short interest, daily Reg SHO short volume, weekly ATS dark-pool venue volume, and TRACE Treasury aggregates.",
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -10,16 +10,31 @@
     "url": "git+https://github.com/JaspersAI/plugin-finra.git"
   },
   "jaspers": {
-    "sdk": "0.3.0"
+    "sdk": "0.8.0",
+    "title": "FINRA Short Interest & Dark Pools"
   },
+  "keywords": [
+    "finra",
+    "short-interest",
+    "dark-pools",
+    "reg-sho",
+    "ats",
+    "trace",
+    "equities",
+    "free-data"
+  ],
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --test '*.test.ts'",
     "package": "node scripts/package.mjs"
   },
   "devDependencies": {
-    "@jaspers-ai/sdk": "^0.3.0",
+    "@jaspers-ai/sdk": "0.8.0",
     "@types/node": "^24.13.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "typescript": "^7.0.2",
     "zod": "^4.6.5"
   }

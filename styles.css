@@ -1,0 +1,113 @@
+/* Square-corner house style using Jaspers Terminal theme variables with light-mode fallbacks. */
+
+.fn-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--jaspers-background, #fff);
+  color: var(--jaspers-foreground, #171717);
+  font: 13px/1.45 var(--jaspers-font-sans, system-ui, -apple-system, sans-serif);
+}
+
+.fn-bar {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--jaspers-border, #e5e5e5);
+}
+
+.fn-input {
+  width: 84px;
+  text-transform: uppercase;
+  border: 1px solid var(--jaspers-border, #e5e5e5);
+  background: var(--jaspers-background, #fff);
+  color: var(--jaspers-foreground, #171717);
+  font: inherit;
+  padding: 2px 6px;
+  outline: none;
+  border-radius: 0;
+}
+
+.fn-input:focus {
+  border-color: var(--jaspers-foreground, #171717);
+}
+
+.fn-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.fn-tab {
+  border: 1px solid var(--jaspers-border, #e5e5e5);
+  background: var(--jaspers-background, #fff);
+  color: var(--jaspers-muted-foreground, #737373);
+  font: inherit;
+  font-size: 12px;
+  padding: 2px 8px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.fn-tab-active {
+  background: var(--jaspers-primary, #171717);
+  color: var(--jaspers-primary-foreground, #fff);
+  border-color: var(--jaspers-primary, #171717);
+}
+
+.fn-body {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 0 8px 8px;
+}
+
+.fn-note {
+  margin: 10px 0;
+  color: var(--jaspers-muted-foreground, #737373);
+}
+
+.fn-error {
+  margin: 10px 0;
+  color: var(--jaspers-destructive, #dc2626);
+  white-space: pre-wrap;
+}
+
+.fn-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+}
+
+.fn-table th,
+.fn-table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--jaspers-border, #e5e5e5);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.fn-table th {
+  color: var(--jaspers-muted-foreground, #737373);
+  font-weight: 500;
+}
+
+.fn-table th:last-child,
+.fn-table td:last-child {
+  padding-right: 32px;
+}
+
+.fn-num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.fn-up {
+  color: var(--jaspers-positive, #15803d);
+}
+
+.fn-down {
+  color: var(--jaspers-negative, #b91c1c);
+}
